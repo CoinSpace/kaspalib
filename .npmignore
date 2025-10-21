@@ -1,0 +1,4 @@
+.editorconfig
+eslint.config.js
+.github/*
+test/*

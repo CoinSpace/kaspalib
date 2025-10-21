@@ -1,0 +1,32 @@
+{
+  "name": "kaspalib",
+  "version": "0.0.0",
+  "description": "Kaspa lib",
+  "author": "Coin Wallet <support@coin.space> (https://coin.space/)",
+  "license": "MIT",
+  "main": "lib/kaspa.js",
+  "type": "module",
+  "exports": {
+    ".": "./lib/kaspa.js",
+    "./address.js": "./lib/address.js",
+    "./utils.js": "./lib/utils.js"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoinSpace/kaspalib.git"
+  },
+  "keywords": [
+    "kaspa",
+    "kas"
+  ],
+  "dependencies": {
+    "@noble/curves": "^1.0.0",
+    "@noble/hashes": "^1.0.0",
+    "@scure/bip32": "^1.0.0",
+    "bech32cashaddr": "^1.0.0",
+    "micro-packed": "~0.7.3"
+  }
+}
