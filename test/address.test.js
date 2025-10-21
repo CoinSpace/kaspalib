@@ -1,7 +1,7 @@
-import { describe, test } from 'node:test';
 import assert from 'node:assert/strict';
+import { describe, test } from 'node:test';
 
-import { Address, ADDRESS_PREFIXES } from 'kaspalib';
+import { ADDRESS_PREFIXES, Address } from 'kaspalib';
 
 const cases = [
   { address: 'a:qqeq69uvrh', prefix: 'a', type: 'pk', payload: new Uint8Array() },

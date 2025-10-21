@@ -12,7 +12,8 @@
     "./utils.js": "./lib/utils.js"
   },
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "lint": "eslint --report-unused-disable-directives ."
   },
   "repository": {
     "type": "git",
@@ -28,5 +29,9 @@
     "@scure/bip32": "^1.0.0",
     "bech32cashaddr": "^1.0.0",
     "micro-packed": "~0.7.3"
+  },
+  "devDependencies": {
+    "eslint": "^9.38.0",
+    "eslint-config-coinspace": "^3.0.1"
   }
 }

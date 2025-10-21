@@ -1,8 +1,8 @@
-import { describe, test } from 'node:test';
 import assert from 'node:assert/strict';
+import { describe, test } from 'node:test';
 
 import { hexToBytes } from 'kaspalib/utils.js';
-import { Address, ADDRESS_PREFIXES, OutScript, MAX_SCRIPT_PUBLIC_KEY_VERSION } from 'kaspalib';
+import { ADDRESS_PREFIXES, Address, MAX_SCRIPT_PUBLIC_KEY_VERSION, OutScript } from 'kaspalib';
 
 describe('OutScript.decode', () => {
   const TESTS = [{
@@ -101,7 +101,7 @@ describe('OutScript.decode and Address.decode', () => {
       if (expectedAddress) {
         const address = Address({ prefix }).encode({ type: payment.type, payload: payment.payload });
         assert.equal(address, expectedAddress);
-        const encoded = OutScript.encode({ version: version, type: payment.type, payload: payment.payload });
+        const encoded = OutScript.encode({ version, type: payment.type, payload: payment.payload });
         assert.deepEqual(encoded, scriptPublicKey);
       }
       if (expectedThrow) {

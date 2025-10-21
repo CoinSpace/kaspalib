@@ -1,13 +1,14 @@
-import { describe, test } from 'node:test';
+/* eslint-disable max-len */
 import assert from 'node:assert';
+import { describe, test } from 'node:test';
 
 import {
-  utxoPlurality,
-  transactionStorageMass,
-  STORAGE_MASS_PARAMETER,
   SOMPI_PER_KASPA,
+  STORAGE_MASS_PARAMETER,
   UTXO_CONST_STORAGE,
   UTXO_UNIT_SIZE,
+  transactionStorageMass,
+  utxoPlurality,
 } from 'kaspalib';
 
 const makeScript = (len) => ({ length: len });
@@ -163,7 +164,7 @@ describe('transactionStorageMass (plurality parity with Rust)', () => {
       assert.strictEqual(
         mass1,
         mass2,
-        `${tc.name}: mass mismatch tx1=${mass1.toString()} tx2=${mass2.toString()}`,
+        `${tc.name}: mass mismatch tx1=${mass1.toString()} tx2=${mass2.toString()}`
       );
     });
   });
@@ -195,7 +196,7 @@ describe('transactionStorageMass', () => {
 
   test('tx with more outs than ins (3)', () => {
     const base = 10_000n * SOMPI_PER_KASPA;
-    const tx = generateTxFromAmounts([base + 4n, base, base * 2n], [base + 1n, base + 1n, base + 1n, base +1n]);
+    const tx = generateTxFromAmounts([base + 4n, base, base * 2n], [base + 1n, base + 1n, base + 1n, base + 1n]);
     assert.strictEqual(transactionStorageMass(tx), 0n);
   });
 
