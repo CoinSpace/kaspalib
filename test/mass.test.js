@@ -10,6 +10,12 @@ import {
   transactionStorageMass,
   utxoPlurality,
 } from 'kaspalib';
+import {
+  inputSize,
+  outputSize,
+  transactionComputeMass,
+  transactionSize,
+} from 'kaspalib/mass.js';
 
 const makeScript = (len) => ({ length: len });
 
@@ -25,6 +31,34 @@ const scriptForPlurality = (desiredPlurality) => {
   const length = Number((desiredPlurality - 1n) * UTXO_UNIT_SIZE);
   return makeScript(length);
 };
+
+describe('input/output/tx default sizes', () => {
+  test('default input size', () => {
+    assert.strictEqual(inputSize({}), 118n);
+  });
+
+  test('default output size', () => {
+    assert.strictEqual(outputSize({}), 52n);
+  });
+
+  test('empty tx size', () => {
+    assert.strictEqual(transactionSize({}), 94n);
+  });
+
+  test('1:1 tx size', () => {
+    // 94 + 118 + 52
+    assert.strictEqual(transactionSize({ inputs: [{}], outputs: [{}] }), 264n);
+  });
+
+  test('empty tx mass', () => {
+    assert.strictEqual(transactionComputeMass({}), 94n);
+  });
+
+  test('1:1 tx mass', () => {
+    // 94 + 1000 + 118 + 360 + 52
+    assert.strictEqual(transactionComputeMass({ inputs: [{}], outputs: [{}] }), 1624n);
+  });
+});
 
 describe('utxoPlurality', () => {
   test('returns 1 for default and empty scripts', () => {

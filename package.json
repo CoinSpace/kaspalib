@@ -9,6 +9,9 @@
   "exports": {
     ".": "./lib/kaspa.js",
     "./address.js": "./lib/address.js",
+    "./mass.js": "./lib/mass.js",
+    "./payments.js": "./lib/payments.js",
+    "./script.js": "./lib/script.js",
     "./utils.js": "./lib/utils.js"
   },
   "scripts": {
