@@ -6,6 +6,11 @@ import config, { browser } from 'eslint-config-coinspace';
 export default [
   ...config,
   ...browser,
+  {
+    languageOptions: {
+      ecmaVersion: 2025,
+    },
+  },
   jsdoc({
     config: 'flat/recommended',
   }),
