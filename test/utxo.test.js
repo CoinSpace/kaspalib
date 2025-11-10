@@ -198,6 +198,19 @@ describe('utxo', () => {
       }
     });
 
+    for (const item of utxos) {
+      if (item.utxo.amount >= 5n * SOMPI_PER_KASPA + MAXIMUM_STANDARD_TRANSACTION_MASS) {
+        test(`outputs 1 KAS, 4 KAS, single input ~ ${item.utxo.amount / SOMPI_PER_KASPA} KAS`, () => {
+          const res = select([item], [{
+            amount: 1n * SOMPI_PER_KASPA,
+          }, {
+            amount: 4n * SOMPI_PER_KASPA,
+          }]);
+          assert(res.selected);
+        });
+      }
+    }
+
     test('throws when best selection exceeds max fee budget', () => {
       assert.throws(() => {
         select(utxos, [{
