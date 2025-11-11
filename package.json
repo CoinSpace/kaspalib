@@ -9,6 +9,7 @@
   "exports": {
     ".": "./lib/kaspa.js",
     "./address.js": "./lib/address.js",
+    "./hdkey.js": "./lib/hdkey.js",
     "./mass.js": "./lib/mass.js",
     "./payments.js": "./lib/payments.js",
     "./script.js": "./lib/script.js",
@@ -34,6 +35,7 @@
     "micro-packed": "~0.7.3"
   },
   "devDependencies": {
+    "@scure/bip39": "^1.6.0",
     "eslint": "^9.38.0",
     "eslint-config-coinspace": "^3.0.1",
     "eslint-plugin-jsdoc": "^61.1.5"
