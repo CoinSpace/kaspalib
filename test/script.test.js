@@ -2,7 +2,12 @@
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
 
-import { MAX_SCRIPT_ELEMENT_SIZE, MAX_SCRIPT_SIZE, OP, Script } from 'kaspalib';
+import {
+  MAX_SCRIPT_ELEMENT_SIZE,
+  MAX_SCRIPT_SIZE,
+  OP,
+  Script,
+} from 'kaspalib';
 
 describe('Script.encode opcodes', () => {
   const TESTS = [

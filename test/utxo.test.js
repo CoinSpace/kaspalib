@@ -9,22 +9,23 @@ import {
   MASS_PER_STANDARD_OUTPUT,
   MAXIMUM_STANDARD_TRANSACTION_MASS,
   SOMPI_PER_KASPA,
+  hexToBytes,
   transactionMass,
-} from '../lib/mass.js';
+} from 'kaspalib';
 import {
   SOFT_DUST,
   accumulative,
   branchAndBound,
   select,
   sortUtxos,
-} from '../lib/utxo.js';
+} from 'kaspalib/utxo.js';
 
 import raw from './fixtures/utxos.json' with { type: 'json' };
 
 const utxos = raw.map((item) => {
   return {
     utxo: {
-      transactionId: item.outpoint.transactionId,
+      transactionId: hexToBytes(item.outpoint.transactionId),
       index: parseInt(item.outpoint.index),
       amount: BigInt(item.utxoEntry.amount),
       daaScore: parseInt(item.utxoEntry.blockDaaScore),

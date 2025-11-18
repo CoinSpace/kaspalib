@@ -4,7 +4,7 @@ import { describe, test } from 'node:test';
 
 import { mnemonicToSeedSync } from '@scure/bip39';
 
-import { ADDRESS_PREFIXES, Address } from 'kaspalib/address.js';
+import { ADDRESS_PREFIXES, Address } from 'kaspalib';
 import { HDKey, MAINNET_VERSIONS, TESTNET_VERSIONS } from 'kaspalib/hdkey.js';
 
 const GEN1_RECEIVE_ADDRESSES = [

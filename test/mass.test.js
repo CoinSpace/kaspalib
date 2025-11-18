@@ -7,15 +7,13 @@ import {
   STORAGE_MASS_PARAMETER,
   UTXO_CONST_STORAGE,
   UTXO_UNIT_SIZE,
-  transactionStorageMass,
-  utxoPlurality,
-} from 'kaspalib';
-import {
   inputSize,
   outputSize,
   transactionComputeMass,
   transactionSize,
-} from 'kaspalib/mass.js';
+  transactionStorageMass,
+  utxoPlurality,
+} from 'kaspalib';
 
 const makeScript = (len) => ({ length: len });
 

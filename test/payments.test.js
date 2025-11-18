@@ -1,8 +1,13 @@
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
 
-import { hexToBytes } from 'kaspalib/utils.js';
-import { ADDRESS_PREFIXES, Address, MAX_SCRIPT_PUBLIC_KEY_VERSION, OutScript } from 'kaspalib';
+import {
+  ADDRESS_PREFIXES,
+  Address,
+  MAX_SCRIPT_PUBLIC_KEY_VERSION,
+  OutScript,
+  hexToBytes,
+} from 'kaspalib';
 
 describe('OutScript.decode', () => {
   const TESTS = [{

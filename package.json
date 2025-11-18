@@ -10,10 +10,8 @@
     ".": "./lib/kaspa.js",
     "./address.js": "./lib/address.js",
     "./hdkey.js": "./lib/hdkey.js",
-    "./mass.js": "./lib/mass.js",
-    "./payments.js": "./lib/payments.js",
-    "./script.js": "./lib/script.js",
-    "./utils.js": "./lib/utils.js"
+    "./utils.js": "./lib/utils.js",
+    "./utxo.js": "./lib/utxo.js"
   },
   "scripts": {
     "test": "node --test",
